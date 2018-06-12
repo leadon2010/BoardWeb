@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<context:component-scan
+		base-package="com.springbook.biz"></context:component-scan>
+
+	<bean id="log" class="com.springbook.biz.common.Log4jAdvice" />
+	<bean id="before" class="com.springbook.biz.common.BeforeAdvice" />
+	<bean id="after" class="com.springbook.biz.common.AfterAdvice" />
+	<bean id="return" class="com.springbook.biz.common.AfterReturningAdvice" />
+	<bean id="throw" class="com.springbook.biz.common.AfterThrowing" />
+	<bean id="around" class="com.springbook.biz.common.AroundAdvice" />
+
+	<aop:config>
+		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allpointcut" />
+
+		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getpointcut" />
+
+		<aop:aspect ref="log">
+			<aop:before method="printLogging" pointcut-ref="allpointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="before">
+			<aop:before method="beforeLog" pointcut-ref="allpointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="after">
+			<aop:after method="finalLog" pointcut-ref="getpointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="return">
+			<aop:after-returning method="afterLog" returning="returnObj" pointcut-ref="allpointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="throw">
+			<aop:after-throwing method="exceptionLog" throwing="exceptObj" pointcut-ref="allpointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="around">
+			<aop:around method="aroundLog" pointcut-ref="getpointcut" />
+		</aop:aspect>
+
+	</aop:config>
+
+</beans>
