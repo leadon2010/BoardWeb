@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h3>Model 2: 게시글정보수정</h3>
-	<a href="getBoaradList.do">게시글목록보기</a>
+	<a href="getBoardList.do">게시글목록보기</a>
 	<form action="updateBoard.do">
 		${board}<br>
 		seq:<input type="text" name="seq" value='${board.getSeq()}' /><br>
