@@ -129,6 +129,12 @@ public class UserServlet extends HttpServlet {
 			bdao.updateBoard(bvo);
 			response.sendRedirect("getBoardList.do");
 
+		} else if (path.equals("/updateBoardForm.do")) {
+			System.out.println("UserServlet================updateBoardForm");
+
+			request.setAttribute("board", bdao.getBoard(bvo));
+			request.getRequestDispatcher("updateBoard.jsp").forward(request, response);
+
 		} else {
 			System.out.println("UserServlet================else");
 
