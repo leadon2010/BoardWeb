@@ -11,7 +11,7 @@
 <title></title>
 </head>
 <body>
-	<h3>Model 2: 회원정보조회</h3>
+	<h3>Model 2: 회원목록보기</h3>
 	<a href="userInsert.jsp">회원가입하기</a>
 	<c:forEach items="${list}" var="vo">
 		<div style="border: 1px solid blue;">
@@ -21,5 +21,6 @@
 			role:${vo.role}
 		</div>
 	</c:forEach>
+	<a href="getBoardList.do">게시판목록보기</a><br>
 </body>
 </html>

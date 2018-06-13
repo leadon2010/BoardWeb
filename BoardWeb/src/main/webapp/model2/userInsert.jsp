@@ -6,7 +6,7 @@
 <title></title>
 </head>
 <body>
-<h3>회원가입</h3>
+<h3>Model 2: 회원가입</h3>
 <a href="getUserList.do">회원목록보기</a>
 <form action="insertUser.do">
 	ID:<input name="id" type="text"/>

@@ -6,7 +6,7 @@
 <title></title>
 </head>
 <body>
-	<h3>로그인</h3>
+	<h3>Model 2 :로그인</h3>
 	<form action="login.do">
 		<input type="text" name="id" /> 
 		<input type="text" name="password" />

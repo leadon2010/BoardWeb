@@ -43,6 +43,17 @@ public class UserServlet extends HttpServlet {
 
 		UserDAO dao = new UserDAO();
 
+		BoardVO bvo = new BoardVO();
+
+		if (request.getParameter("seq") != null && !request.getParameter("seq").equals(""))
+			bvo.setSeq((Integer.parseInt(request.getParameter("seq"))));
+
+		bvo.setTitle(request.getParameter("title"));
+		bvo.setWriter(request.getParameter("writer"));
+		bvo.setContent(request.getParameter("content"));
+
+		BoardDAO bdao = new BoardDAO();
+
 		if (path.equals("/login.do")) {
 			System.out.println("UserServlet================login");
 
@@ -93,6 +104,12 @@ public class UserServlet extends HttpServlet {
 
 			request.setAttribute("list", dao.getUserList());
 			request.getRequestDispatcher("getUserList.jsp").forward(request, response);
+
+		} else if (path.equals("/getBoardList.do")) {
+			System.out.println("UserServlet================getUserList");
+
+			request.setAttribute("boardlist", bdao.getBoardList());
+			request.getRequestDispatcher("getBoardList.jsp").forward(request, response);
 
 		} else {
 			System.out.println("UserServlet================else");

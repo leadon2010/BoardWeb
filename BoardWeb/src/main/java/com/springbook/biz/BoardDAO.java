@@ -115,11 +115,11 @@ public class BoardDAO {
 
 			while (rs.next()) {
 				map = new HashMap<String, Object>();
-				map.put("seq", rs.getInt("seq"));
+				map.put("seq", rs.getString("seq"));
 				map.put("title", rs.getString("title"));
 				map.put("writer", rs.getString("writer"));
 				map.put("content", rs.getString("content"));
-				map.put("regDate", rs.getString("regdate"));
+				map.put("regdate", rs.getString("regdate"));
 				map.put("cnt", rs.getInt("cnt"));
 
 				list.add(map);
@@ -150,7 +150,7 @@ public class BoardDAO {
 
 			if (rs.next()) {
 				vo = new BoardVO();
-				vo.setCnt(rs.getInt("seq"));
+				vo.setSeq(rs.getInt("seq"));
 				vo.setTitle(rs.getString("title"));
 				vo.setWriter(rs.getString("writer"));
 				vo.setContent(rs.getString("content"));
