@@ -11,7 +11,7 @@
 	<a href="insertBoard.jsp">게시글등록하기</a>
 	<c:forEach items="${boardlist}" var="board">
 		<div style="border: 1px solid blue;">
-			seq:<a href="getBoard.do?seq=${board.seq}">${board.seq}</a><br>
+			seq:<a href="updateBoardForm.do?seq=${board.seq}">${board.seq}</a><br>
 			title:${board.title}<br>
 			writer:${board.writer}<br>
 			content:${board.content}<br>
