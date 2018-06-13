@@ -111,6 +111,24 @@ public class UserServlet extends HttpServlet {
 			request.setAttribute("boardlist", bdao.getBoardList());
 			request.getRequestDispatcher("getBoardList.jsp").forward(request, response);
 
+		} else if (path.equals("/getBoard.do")) {
+			System.out.println("UserServlet================getBoard");
+
+			request.setAttribute("board", bdao.getBoard(bvo));
+			request.getRequestDispatcher("getBoard.jsp").forward(request, response);
+
+		} else if (path.equals("/insertBoard.do")) {
+			System.out.println("UserServlet================insertBoard");
+
+			bdao.insertBoard(bvo);
+			response.sendRedirect("getBoardList.do");
+
+		} else if (path.equals("/updateBoard.do")) {
+			System.out.println("UserServlet================updateBoard");
+
+			bdao.updateBoard(bvo);
+			response.sendRedirect("getBoardList.do");
+
 		} else {
 			System.out.println("UserServlet================else");
 

@@ -79,8 +79,9 @@ public class BoardDAO {
 	}// end of updateBoard
 
 	public int insertBoard(BoardVO vo) {
+		System.out.println(vo);
 		int rowCount = 0;
-		String sql = "INSERT INTO board VALUES ((SELECT MAX(seq) + 1 FROM board),?,?,?,SYSDATE,0)";
+		String sql = "INSERT INTO board VALUES ((SELECT MAX(seq) + 1 FROM board),?,?,?,SYSDATE,0,NULL)";
 		try {
 			conn = ConnectionManager.connect();
 			pstmt = conn.prepareStatement(sql);
@@ -144,7 +145,7 @@ public class BoardDAO {
 		BoardVO vo = null;
 		try {
 			conn = ConnectionManager.connect();
-			String sql = "select * from board where to_char(seq) = " + pvo.getSeq();
+			String sql = "select * from board where seq = " + pvo.getSeq();
 			pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 

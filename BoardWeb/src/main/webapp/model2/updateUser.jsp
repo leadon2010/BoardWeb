@@ -10,10 +10,10 @@
 	<a href="getUserList.do">회원목록보기</a>
 	<form action="updateUser.do">
 		${user}<br> 
-		ID:<input name="id" type="text" value='${user.id}' />
-		Password:<input type="text" name="password" value='${user.password }' />
-		Name:<input type="text" name="name" value='${user.name }' /> 
-		Role:<input type="text" name="role" value='${user.role }' /> 
+		ID:<input name="id" type="text" value='${user.id}' /><br>
+		Password:<input type="text" name="password" value='${user.password}' /><br>
+		Name:<input type="text" name="name" value='${user.name}' /><br>
+		Role:<input type="text" name="role" value='${user.role}' /><br>
 		<input type="submit" value="수정" />
 	</form>
 </body>

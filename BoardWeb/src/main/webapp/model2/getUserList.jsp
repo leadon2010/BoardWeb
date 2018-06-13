@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h3>Model 2: 회원목록보기</h3>
-	<a href="userInsert.jsp">회원가입하기</a>
+	<a href="insertUser.jsp">회원가입하기</a>
 	<c:forEach items="${list}" var="vo">
 		<div style="border: 1px solid blue;">
 			id:<a href="updateUserForm.do?id=${vo.id}&password=${vo.password}&name=${vo.name}&role=${vo.role}">${vo.id}</a><br>

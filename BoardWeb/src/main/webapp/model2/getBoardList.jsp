@@ -8,10 +8,10 @@
 </head>
 <body>
 	<h3>Model 2: 게시판목록</h3>
-	<a href="boardInsert.jsp">게시글등록하기</a>
+	<a href="insertBoard.jsp">게시글등록하기</a>
 	<c:forEach items="${boardlist}" var="board">
 		<div style="border: 1px solid blue;">
-			seq:${board.seq}<br>
+			seq:<a href="getBoard.do?seq=${board.seq}">${board.seq}</a><br>
 			title:${board.title}<br>
 			writer:${board.writer}<br>
 			content:${board.content}<br>
