@@ -32,4 +32,10 @@ public class BoardController {
 	public String insertBoard() {
 		return "sendredirect:getBoardList";
 	}
+
+	@RequestMapping("/getBoard")
+	public String getBoard() {
+		return "/board/getBoard";
+	}
+
 }

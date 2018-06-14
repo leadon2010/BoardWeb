@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
 <style>
 div.container {
 	width: 100%;
@@ -41,7 +41,7 @@ article {
 	padding: 1em;
 	overflow: hidden;
 }
-</style>
+</style></head>
 <body>
 	<div class="container">
 		<header>
