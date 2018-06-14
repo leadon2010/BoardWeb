@@ -31,7 +31,7 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
+	<!-- <servlet>
 		<description></description>
 		<display-name>UserServlet</display-name>
 		<servlet-name>UserServlet</servlet-name>
@@ -40,6 +40,6 @@
 	<servlet-mapping>
 		<servlet-name>UserServlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
 </web-app>
