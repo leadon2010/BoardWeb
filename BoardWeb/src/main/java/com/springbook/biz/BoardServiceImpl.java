@@ -6,12 +6,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("boardService123")
+@Service("boardService")
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
 	// BoardDAO dao;
-	BoardDAOSpring dao;
+	// BoardDAOSpring dao;
+	BoardMybatisDAO dao;
 
 	// private Log4jAdvice log = new Log4jAdvice();
 

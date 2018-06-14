@@ -1,16 +1,23 @@
 package com.springbook.biz;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository("boardDAO")
 public class BoardMybatisDAO {
-	// SqlSessionTemplate sqlSession;
-	private SqlSession sqlSession;
 
-	public BoardMybatisDAO() {
-		sqlSession = SqlsessionFactoryBean.getSqlSessionInstance();
-	}
+	// private SqlSession sqlSession;
+	@Autowired
+	SqlSessionTemplate sqlSession;
+
+	// public BoardMybatisDAO() {
+	// sqlSession = SqlsessionFactoryBean.getSqlSessionInstance();
+	// }
 
 	public void insertBoard(BoardVO vo) {
 		sqlSession.insert("boardDAO.insertBoard", vo);
@@ -31,7 +38,11 @@ public class BoardMybatisDAO {
 		return sqlSession.selectOne("boardDAO.getBoard", vo);
 	}
 
-	public List<BoardVO> getBoardList() {
+	public List<BoardVO> getBoardList2() {
+		return sqlSession.selectList("boardDAO.getBoardList");
+	}
+
+	public List<Map<String, Object>> getBoardList() {
 		return sqlSession.selectList("boardDAO.getBoardList");
 	}
 

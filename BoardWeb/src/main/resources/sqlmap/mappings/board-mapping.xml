@@ -8,7 +8,11 @@
 		SELECT * FROM board WHERE seq = #{seq}
 	</select>
 
-	<select id="getBoardList" resultType="board">
+	<select id="getBoardList" resultType="map">
+		SELECT * FROM board ORDER BY 1 DESC
+	</select>
+
+	<select id="getBoardList2" resultType="board">
 		SELECT * FROM board ORDER BY 1 DESC
 	</select>
 

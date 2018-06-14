@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BoardController {
-	
+
 	@Autowired
 	// BoardDAO boardDAO;
 	BoardService boardService;
@@ -24,7 +24,7 @@ public class BoardController {
 
 	@RequestMapping("/insertBoardForm")
 	public String insertBoardForm() {
-		
+
 		return "";
 	}
 

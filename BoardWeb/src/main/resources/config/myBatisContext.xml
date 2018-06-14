@@ -9,7 +9,7 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:sqlmap/sql-map-config.xml" />
-		<property name="mapperLocations" value="classpath:sqlmap/mappings/*.xml" />
+		<property name="mapperLocations" value="classpath:sqlmap/mappings/board-mapping.xml" />
 	</bean>
 
 	<!-- SqlSessionTemplate -->
