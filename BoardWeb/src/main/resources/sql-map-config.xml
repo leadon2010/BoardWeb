@@ -6,7 +6,7 @@
 
 	<properties resource="database.properties" />
 	<typeAliases>
-		<typeAlias type="com.springbook.biz.BoardVO." alias="board"></typeAlias>
+		<typeAlias type="com.springbook.biz.BoardVO" alias="board"></typeAlias>
 	</typeAliases>
 
 	<environments default="development">
