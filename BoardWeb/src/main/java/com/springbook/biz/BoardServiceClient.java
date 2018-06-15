@@ -2,6 +2,9 @@ package com.springbook.biz;
 
 import java.util.List;
 
+import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.board.impl.BoardMybatisDAO;
+
 public class BoardServiceClient {
 	public static void main(String[] args) {
 		BoardMybatisDAO boardDAO = new BoardMybatisDAO();
@@ -15,7 +18,7 @@ public class BoardServiceClient {
 		//vo.setSearchKeyword("title");
 		//vo.setSearchCondition("case");
 
-		List<BoardVO> boardlist = boardDAO.getBoardList();
+		List<BoardVO> boardlist = boardDAO.getBoardList2();
 		for (BoardVO list : boardlist) {
 			System.out.println("--->" + list.toString());
 		}

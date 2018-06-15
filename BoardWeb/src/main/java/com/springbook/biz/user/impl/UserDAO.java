@@ -1,4 +1,4 @@
-package com.springbook.biz;
+package com.springbook.biz.user.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.springbook.biz.common.ConnectionManager;
+import com.springbook.biz.user.UserVO;
 
 //@Repository
 public class UserDAO {

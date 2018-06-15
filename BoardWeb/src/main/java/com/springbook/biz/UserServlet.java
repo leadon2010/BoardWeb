@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.board.impl.BoardDAO;
+import com.springbook.biz.user.UserVO;
+import com.springbook.biz.user.impl.UserDAO;
+
 /**
  * Servlet implementation class UserServlet
  */

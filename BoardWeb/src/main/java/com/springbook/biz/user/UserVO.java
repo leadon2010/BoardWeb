@@ -1,4 +1,4 @@
-package com.springbook.biz;
+package com.springbook.biz.user;
 
 public class UserVO {
 	String id;

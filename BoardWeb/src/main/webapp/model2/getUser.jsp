@@ -1,5 +1,5 @@
-<%@page import="com.springbook.biz.UserVO"%>
-<%@page import="com.springbook.biz.UserDAO"%>
+<%@page import="com.springbook.biz.user.UserVO"%>
+<%@page import="com.springbook.biz.user.impl.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

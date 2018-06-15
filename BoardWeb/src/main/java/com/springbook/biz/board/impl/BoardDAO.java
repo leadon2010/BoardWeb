@@ -1,4 +1,4 @@
-package com.springbook.biz;
+package com.springbook.biz.board.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.common.ConnectionManager;
 
 //@Repository("boardDAO")

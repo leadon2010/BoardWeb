@@ -1,4 +1,4 @@
-package com.springbook.biz;
+package com.springbook.biz.board;
 
 public class BoardVO {
 	int seq;

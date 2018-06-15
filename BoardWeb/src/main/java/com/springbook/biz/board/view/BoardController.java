@@ -1,4 +1,4 @@
-package com.springbook.biz;
+package com.springbook.biz.board.view;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +13,7 @@ public class BoardController {
 
 	@Autowired
 	// BoardDAO boardDAO;
-	BoardService boardService;
+	com.springbook.biz.board.BoardService boardService;
 
 	@RequestMapping("/getBoardList")
 	public String getBoardList(Model model) {

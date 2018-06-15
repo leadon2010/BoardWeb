@@ -1,4 +1,4 @@
-package com.springbook.biz;
+package com.springbook.biz.board.impl;
 
 import java.util.List;
 import java.util.Map;
@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.springbook.biz.board.BoardVO;
 
 @Repository("boardDAO")
 public class BoardMybatisDAO {

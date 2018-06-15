@@ -1,4 +1,4 @@
-package com.springbook.biz;
+package com.springbook.biz.user;
 
 import java.util.List;
 import java.util.Map;
