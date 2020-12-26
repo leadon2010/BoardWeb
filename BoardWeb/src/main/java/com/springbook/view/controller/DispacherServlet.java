@@ -20,7 +20,7 @@ public class DispacherServlet extends HttpServlet {
 
 	}
 
-	protected void goGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void goGet(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		process(request, response);
 	}
 
@@ -30,7 +30,7 @@ public class DispacherServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
-	private void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String uri = request.getRequestURI();
 		String path = uri.substring(uri.lastIndexOf("/"));
 

@@ -24,6 +24,7 @@ public class LoginController implements Controller {
 
 		if (user != null) {
 			return "getBoardList.do";
+
 		} else {
 
 			return "login";
