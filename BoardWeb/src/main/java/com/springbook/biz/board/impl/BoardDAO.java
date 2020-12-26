@@ -103,7 +103,7 @@ public class BoardDAO {
 		return rowCount;
 	}// end of insertBoard(BoardVO vo)
 
-	public List<Map<String, Object>> getBoardList() {
+	public List<Map<String, Object>> getBoardListMap() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		Map<String, Object> map = null;
 
@@ -123,6 +123,43 @@ public class BoardDAO {
 				map.put("cnt", rs.getInt("cnt"));
 
 				list.add(map);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+
+		return list;
+	}// end of getBoardList()
+
+	public List<BoardVO> getBoardList() {
+
+		List<BoardVO> list = new ArrayList<>();
+
+		try {
+			conn = ConnectionManager.connect();
+			String sql = "select * from board order by 1";
+			pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				BoardVO vo = new BoardVO();
+				vo.setSeq(rs.getInt("seq"));
+				vo.setTitle(rs.getString("title"));
+				vo.setWriter(rs.getString("writer"));
+				vo.setContent(rs.getString("content"));
+				vo.setRegDate(rs.getString("regdate"));
+				vo.setCnt(rs.getInt("cnt"));
+
+				list.add(vo);
 			}
 
 		} catch (Exception e) {

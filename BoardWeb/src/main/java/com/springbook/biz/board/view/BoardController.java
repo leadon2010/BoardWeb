@@ -8,12 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.springbook.biz.board.BoardService;
+
 @Controller
 public class BoardController {
 
 	@Autowired
 	// BoardDAO boardDAO;
-	com.springbook.biz.board.BoardService boardService;
+	BoardService boardService;
 
 	@RequestMapping("/getBoardList")
 	public String getBoardList(Model model) {
