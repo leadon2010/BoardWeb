@@ -1,12 +1,15 @@
 package com.springbook.view.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(name = "action", urlPatterns = { "*.do" })
 public class DispacherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1l;
 	private HandlerMapping handlerMapping;
@@ -20,8 +23,13 @@ public class DispacherServlet extends HttpServlet {
 
 	}
 
-	protected void goGet(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		process(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			process(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -31,6 +39,7 @@ public class DispacherServlet extends HttpServlet {
 	}
 
 	private void process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		String uri = request.getRequestURI();
 		String path = uri.substring(uri.lastIndexOf("/"));
 
